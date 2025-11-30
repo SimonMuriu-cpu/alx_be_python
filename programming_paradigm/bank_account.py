@@ -14,4 +14,9 @@ class BankAccount:
     return False
 
   def display_balance(self):
+    try:
+      if self.account_balance < 0:
+        raise ValueError("Account balance cannot be negative.")
+    except ValueError as e:
+      print(e)
     print(f"Current Balance: ${self.account_balance}")
